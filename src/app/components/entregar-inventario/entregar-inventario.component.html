@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Entregar Inventario</h2>
+    <div *ngFor="let inventario of inventarios" class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ inventario.producto }}</h5>
+            <p class="card-text">{{ inventario.numeroSerie }}</p>
+            <button (click)="entregarInventario(inventario)" class="btn"
+                [ngClass]="inventario.estado === 'Entregado' ? 'btn-success' : 'btn-primary'"
+                [disabled]="inventario.estado === 'Entregado'">
+                {{ inventario.estado === 'Entregado' ? 'Entregado' : 'Entregar' }}
+            </button>
+        </div>
+    </div>
+</div>

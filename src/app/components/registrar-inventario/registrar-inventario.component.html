@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2>Registro de inventario</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #inventarioForm="ngForm">
+          <div class="form-group">
+            <label for="nombreUsuario">Nombre de usuario</label>
+            <input type="text" id="nombreUsuario" class="form-control" required [(ngModel)]="inventario.nombreUsuario" name="nombreUsuario">
+          </div>
+  
+          <div class="form-group">
+            <label for="producto">Productos</label>
+            <select id="producto" class="form-control" required [(ngModel)]="inventario.producto" name="producto">
+              <option *ngFor="let producto of productos" [value]="producto.nombre">{{ producto.nombre }}</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="numeroSerie">Número de serie</label>
+            <input type="text" id="numeroSerie" class="form-control" required [(ngModel)]="inventario.numeroSerie" name="numeroSerie">
+          </div>
+  
+          <div class="form-group">
+            <label for="fechaRegistro">Fecha de registro</label>
+            <input type="date" id="fechaRegistro" class="form-control" required [(ngModel)]="inventario.fechaRegistro" name="fechaRegistro">
+          </div>
+  
+          <button type="submit" class="btn btn-primary mt-3">Guardar y enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
